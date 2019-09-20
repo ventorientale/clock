@@ -102,3 +102,13 @@ body {
     background-image: linear-gradient(225deg, #580141, #027461);
     opacity: .3;
 }
+
+.github-icon{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.github-icon > img {
+ height: 62px;
+}
