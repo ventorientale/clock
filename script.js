@@ -9,6 +9,15 @@ let daysOfWeek = [
   'sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'
 ]
 
+let backgroundColors = [
+  {
+    topLeft: '#580141',
+    topRight: '#580141',
+    bottomLeft: '#027461',
+    bottomRight: '#027461'
+  }
+]
+
 const getRandomArbitrary = (min, max) => Math.random() * (max - min) + min
 
 document.addEventListener('DOMContentLoaded', (event) => {
