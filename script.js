@@ -1,3 +1,4 @@
+const colorStorageKey = 'selected-color-index'
 let hours = 0
 let minutes = 0
 let seconds = 0
@@ -22,6 +23,20 @@ let backgroundColors = [
     topRight: '#af465b',
     bottomLeft: '#f8ec39',
     bottomRight: '#f8ec39',
+    bodyColor: '#fff'
+  },
+  {
+    topLeft: '#af2444',
+    topRight: '#df3f52',
+    bottomLeft: '#f8abf1',
+    bottomRight: '#f839c1',
+    bodyColor: '#fff'
+  },
+  {
+    topLeft: '#af465b',
+    topRight: '#f0e4a2',
+    bottomLeft: '#f86d7a',
+    bottomRight: '#f8513a',
     bodyColor: '#fff'
   }
 ]
@@ -76,9 +91,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   setColorsByIndex = (index) => {
     setColors(backgroundColors[index])
+    localStorage.setItem(colorStorageKey, index)
   }
 
-  setColorsByIndex(0)
+  let currentColorIndex = parseInt(localStorage.getItem(colorStorageKey), 10) || 0
+  setColorsByIndex(backgroundColors[currentColorIndex] ? currentColorIndex : 0)
 
   let menuInner = ''
   backgroundColors.forEach((color, index) => {
