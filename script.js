@@ -28,8 +28,8 @@ let backgroundColors = [
   {
     topLeft: '#af2444',
     topRight: '#df3f52',
-    bottomLeft: '#f8abf1',
-    bottomRight: '#f839c1',
+    bottomLeft: '#f8575e',
+    bottomRight: '#f84955',
     bodyColor: '#fff'
   },
   {
