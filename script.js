@@ -21,15 +21,15 @@ let backgroundColors = [
   {
     topLeft: '#af465b',
     topRight: '#af465b',
-    bottomLeft: '#f8ec39',
+    bottomLeft: '#f8a348',
     bottomRight: '#f8ec39',
     bodyColor: '#fff'
   },
   {
     topLeft: '#af2444',
     topRight: '#df3f52',
-    bottomLeft: '#f8575e',
-    bottomRight: '#f84955',
+    bottomLeft: '#961632',
+    bottomRight: '#f8b15e',
     bodyColor: '#fff'
   },
   {
@@ -38,7 +38,27 @@ let backgroundColors = [
     bottomLeft: '#f86d7a',
     bottomRight: '#f8513a',
     bodyColor: '#fff'
-  }
+  },
+  {
+    topLeft: '#e2d133',
+    topRight: '#51d9df',
+    bottomLeft: '#e9708d',
+    bottomRight: '#f81f59',
+    bodyColor: '#fff'
+  },
+  {
+    topLeft: '#2434af',
+    topRight: '#4ce5f0',
+    bottomLeft: '#f8d12c',
+    bottomRight: '#f84e5a',
+    bodyColor: '#fff'
+  },{
+    topLeft: '#e62242',
+    topRight: '#e64537',
+    bottomLeft: '#f8f39e',
+    bottomRight: '#44f8f1',
+    bodyColor: '#fff'
+  },
 ]
 
 const getRandomArbitrary = (min, max) => Math.random() * (max - min) + min
