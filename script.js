@@ -14,11 +14,20 @@ let backgroundColors = [
     topLeft: '#580141',
     topRight: '#580141',
     bottomLeft: '#027461',
-    bottomRight: '#027461'
+    bottomRight: '#027461',
+    bodyColor: '#433636'
+  },
+  {
+    topLeft: '#af465b',
+    topRight: '#af465b',
+    bottomLeft: '#f8ec39',
+    bottomRight: '#f8ec39',
+    bodyColor: '#fff'
   }
 ]
 
 const getRandomArbitrary = (min, max) => Math.random() * (max - min) + min
+let setColorsByIndex = (index) => {}
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const timeElement = document.querySelector('.time')
@@ -26,6 +35,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const secondsElement = document.querySelector('.seconds-value')
   const background1Element = document.querySelector('.background-1')
   const background2Element = document.querySelector('.background-2')
+  const bodyElement = document.querySelector('body')
+  const colorMenuElement = document.querySelector('.color-menu')
 
   function render () {
     timeElement.innerHTML = `${hours}:${minutes}`
@@ -52,5 +63,44 @@ document.addEventListener('DOMContentLoaded', (event) => {
     background1Element.style.opacity = getRandomArbitrary(0.5, 1)
     background2Element.style.opacity = getRandomArbitrary(0.3, 0.7)
   }, 1000)
+
+  /**
+   *
+   * @param {{topLeft: string, topRight: string, bottomLeft: string, bottomRight: string, bodyColor: string}} colors
+   */
+  function setColors (colors) {
+    background1Element.style.backgroundImage = `linear-gradient(135deg, ${colors.topLeft}, ${colors.bottomLeft})`
+    background2Element.style.backgroundImage = `linear-gradient(225deg, ${colors.topRight}, ${colors.bottomRight})`
+    bodyElement.style.background = colors.bodyColor
+  }
+
+  setColorsByIndex = (index) => {
+    setColors(backgroundColors[index])
+  }
+
+  setColorsByIndex(0)
+
+  let menuInner = ''
+  backgroundColors.forEach((color, index) => {
+    menuInner += getMenuButton(color, index)
+  })
+  colorMenuElement.innerHTML = menuInner
 })
+
+/**
+ *
+ * @param {{topLeft: string, topRight: string, bottomLeft: string, bottomRight: string, bodyColor: string}} colors
+ * @param index
+ */
+function getMenuButton (colors, index) {
+  return `
+  <div class="item" onclick="setColorsByIndex(${index})">
+        <span style="background: ${colors.topLeft} "></span>
+        <span style="background: ${colors.topRight}"></span>
+        <span style="background: ${colors.bottomLeft}"></span>
+        <span style="background: ${colors.bottomRight}"></span>
+        <span style="background: ${colors.bodyColor}"></span>
+    </div>
+  `
+}
 
