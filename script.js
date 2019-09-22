@@ -35,7 +35,7 @@ let backgroundColors = [
   {
     topLeft: '#af465b',
     topRight: '#f0e4a2',
-    bottomLeft: '#f86d7a',
+    bottomLeft: '#f86f86',
     bottomRight: '#f8513a',
     bodyColor: '#fff'
   },
