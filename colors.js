@@ -62,6 +62,8 @@ let setColorsByIndex = (index) => {}
     const bodyElement = document.querySelector('body')
     const colorMenuElement = document.querySelector('.color-menu')
 
+    bodyElement.style.minHeight = window.innerHeight.toString() + 'px'
+
     setInterval(() => {
       background1Element.style.opacity = getRandomArbitrary(0.5, 1)
       background2Element.style.opacity = getRandomArbitrary(0.3, 0.7)
@@ -95,6 +97,9 @@ let setColorsByIndex = (index) => {}
     }
 
     renderMenu(currentColorIndex)
+    window.addEventListener('resize', () => {
+      bodyElement.style.minHeight = window.innerHeight.toString() + 'px'
+    })
   })
 
   /**
